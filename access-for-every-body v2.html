@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Access for Every Body — Inclusive Venue Guide UK</title>
+<meta name="description" content="Honest access ratings for plus-size people, wheelchair users, and anyone who needs to know before they go. UK venues rated by real people.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --fig: #2d1b4e;
+  --fig-mid: #3d2562;
+  --grape: #7c3aed;
+  --grape-lt: #a78bfa;
+  --blush: #fdf2f8;
+  --rose: #f9a8d4;
+  --rose-dark: #be185d;
+  --sage: #065f46;
+  --sage-lt: #a7f3d0;
+  --sage-mid: #6ee7b7;
+  --cream: #fefce8;
+  --amber: #d97706;
+  --amber-lt: #fef3c7;
+  --sky: #0ea5e9;
+  --sky-lt: #e0f2fe;
+  --sand: #faf7f2;
+  --white: #fff;
+  --ink: #1c1917;
+  --ink-mid: #44403c;
+  --ink-dim: #78716c;
+  --border: #e7e5e4;
+  --r: 16px;
+  --r-sm: 10px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--sand);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.65;}
+
+/* === FOCUS STYLES === */
+:focus-visible {
+  outline: 3px solid var(--grape);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid var(--grape);
+  outline-offset: 2px;
+}
+
+/* === SKIP LINK === */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  background: var(--grape);
+  color: white;
+  padding: 10px 20px;
+  border-radius: var(--r-sm);
+  font-weight: 600;
+  font-size: 14px;
+  z-index: 999;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 10px;
+}
+
+/* === NAV === */
+nav{
+  background:var(--fig);padding:0 32px;
+  height:62px;display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:100;
+}
+.nav-wordmark{
+  display:flex;align-items:baseline;gap:6px;
+}
+.nw-access{font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:white;letter-spacing:-0.02em;}
+.nw-for{color:rgba(255,255,255,0.55);font-size:18px;}
+.nw-body{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:20px;color:var(--grape-lt);}
+.nav-right{display:flex;align-items:center;gap:20px;}
+.nav-link{font-size:13px;font-weight:500;color:rgba(255,255,255,0.55);cursor:pointer;transition:color 0.15s;border:none;background:none;padding:4px 0;text-decoration:none;}
+.nav-link:hover,.nav-link:focus-visible{color:white;}
+.nav-add-btn{
+  background:var(--grape);color:white;border:none;border-radius:8px;
+  padding:8px 16px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;
+  cursor:pointer;transition:all 0.15s;
+}
+.nav-add-btn:hover{background:#6d28d9;}
+.nav-add-btn:focus-visible{outline-color:var(--rose);}
+
+/* === MOBILE MENU === */
+.hamburger{
+  display:none;
+  background:none;border:none;cursor:pointer;
+  width:36px;height:36px;
+  flex-direction:column;align-items:center;justify-content:center;gap:5px;
+  padding:0;
+}
+.hamburger span{
+  display:block;width:22px;height:2px;background:white;
+  border-radius:2px;transition:all 0.2s;
+}
+.hamburger[aria-expanded="true"] span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hamburger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+.hamburger[aria-expanded="true"] span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+
+.mobile-menu{
+  display:none;
+  position:fixed;top:62px;left:0;right:0;
+  background:var(--fig);
+  padding:16px 24px 24px;
+  flex-direction:column;gap:8px;
+  z-index:99;
+  border-top:1px solid rgba(255,255,255,0.1);
+  box-shadow:0 12px 40px rgba(0,0,0,0.3);
+}
+.mobile-menu.open{display:flex;}
+.mobile-menu .nav-link{
+  font-size:15px;padding:12px 0;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  text-align:left;
+}
+.mobile-menu .nav-add-btn{
+  margin-top:8px;padding:12px 20px;font-size:15px;text-align:center;
+}
+
+/* === HERO === */
+.hero{
+  background:var(--fig);
+  padding:64px 32px 120px;
+  position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 600px 400px at 80% 0%, rgba(124,58,237,0.25) 0%, transparent 60%),
+    radial-gradient(ellipse 400px 300px at 20% 100%, rgba(249,168,212,0.12) 0%, transparent 50%);
+}
+.hero-wave{
+  position:absolute;bottom:-2px;left:0;right:0;
+  height:80px;background:var(--sand);
+  clip-path:polygon(0 100%,100% 100%,100% 20%,80% 50%,60% 20%,40% 60%,20% 30%,0 60%);
+}
+.hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1;}
+.hero-label{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--grape-lt);margin-bottom:24px;
+}
+.hero-label::before,.hero-label::after{
+  content:'';display:block;
+  width:20px;height:1px;background:var(--grape-lt);
+}
+.hero h1{
+  font-family:'Fraunces',serif;
+  font-size:clamp(2.5rem,6vw,4.5rem);
+  color:white;line-height:1.05;
+  letter-spacing:-0.02em;margin-bottom:20px;
+}
+.hero h1 .italic{font-style:italic;color:var(--rose);}
+.hero-sub{
+  font-size:1.05rem;color:rgba(255,255,255,0.6);
+  max-width:580px;line-height:1.8;margin-bottom:16px;
+}
+.hero-tagline{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-size:1.1rem;
+  color:var(--grape-lt);
+  margin-bottom:8px;
+}
+.hero-trust{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:600;color:rgba(255,255,255,0.5);
+  margin-bottom:0;
+}
+.hero-trust span{color:var(--rose);font-size:15px;}
+
+/* === SEARCH === */
+.search-zone{
+  max-width:960px;margin:-44px auto 0;padding:0 32px;
+  position:relative;z-index:20;
+}
+.search-card{
+  background:white;border-radius:var(--r);
+  box-shadow:0 8px 40px rgba(45,27,78,0.15);
+  display:flex;gap:0;overflow:hidden;
+}
+.sc-input-wrap{
+  flex:1;display:flex;align-items:center;gap:12px;padding:16px 20px;
+}
+.sc-input{
+  flex:1;border:none;outline:none;
+  font-family:'DM Sans',sans-serif;font-size:15px;color:var(--ink);
+}
+.sc-input::placeholder{color:var(--ink-dim);}
+.sc-input:focus{outline:none;}
+.sc-divider{width:1px;background:var(--border);margin:12px 0;}
+.sc-select{
+  border:none;outline:none;padding:16px 20px;
+  font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink-mid);
+  background:transparent;cursor:pointer;
+}
+.sc-btn{
+  background:var(--grape);color:white;border:none;
+  padding:0 28px;font-family:'DM Sans',sans-serif;
+  font-size:14px;font-weight:600;cursor:pointer;transition:background 0.15s;
+}
+.sc-btn:hover{background:#6d28d9;}
+
+/* === MAIN === */
+.main{max-width:960px;margin:0 auto;padding:40px 32px 80px;}
+
+/* === HOW IT WORKS === */
+.how-section{
+  background:white;border-radius:var(--r);border:1px solid var(--border);
+  padding:28px;margin-bottom:28px;
+  display:none;
+}
+.how-section.open{display:block;}
+.how-section h2{
+  font-family:'Fraunces',serif;font-size:1.3rem;color:var(--ink);margin-bottom:16px;
+}
+.how-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.how-step{text-align:center;padding:16px;}
+.how-step-num{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--fig);color:white;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-family:'Fraunces',serif;font-weight:700;font-size:16px;
+  margin-bottom:10px;
+}
+.how-step h3{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px;}
+.how-step p{font-size:13px;color:var(--ink-mid);line-height:1.6;}
+
+/* === ACCESS BADGES KEY === */
+.key-bar{
+  background:white;border-radius:var(--r-sm);border:1px solid var(--border);
+  padding:16px 20px;margin-bottom:28px;
+  display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+}
+.key-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-dim);}
+.key-items{display:flex;gap:16px;flex-wrap:wrap;}
+.ki{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--ink-mid);}
+.ki-dot{width:10px;height:10px;border-radius:50%;}
+.dot-green{background:#16a34a;}
+.dot-amber{background:#d97706;}
+.dot-red{background:#dc2626;}
+.dot-purple{background:var(--grape);}
+
+/* === FILTERS ROW === */
+.filters-row{
+  display:flex;align-items:center;gap:8px;margin-bottom:24px;flex-wrap:wrap;
+}
+.filter-chip{
+  padding:7px 15px;border-radius:20px;
+  font-size:13px;font-weight:600;cursor:pointer;transition:all 0.15s;
+  border:2px solid var(--border);background:white;color:var(--ink-dim);
+}
+.filter-chip:hover,.filter-chip:focus-visible{border-color:var(--grape);}
+.filter-chip.active{background:var(--fig);color:white;border-color:var(--fig);}
+.sort-wrap{margin-left:auto;}
+.sort-select{
+  border:2px solid var(--border);border-radius:20px;
+  padding:7px 14px;font-family:'DM Sans',sans-serif;
+  font-size:13px;color:var(--ink-mid);background:white;cursor:pointer;
+  outline:none;
+}
+
+/* === VENUE GRID === */
+.venue-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(290px,1fr));
+  gap:16px;
+}
+.venue-card{
+  background:white;border-radius:var(--r);border:2px solid var(--border);
+  overflow:hidden;cursor:pointer;transition:all 0.22s;
+}
+.venue-card:hover,
+.venue-card:focus-visible{
+  border-color:var(--grape);
+  box-shadow:0 8px 32px rgba(124,58,237,0.12);
+  transform:translateY(-3px);
+}
+
+.vc-img{
+  height:130px;display:flex;align-items:center;justify-content:center;
+  font-size:56px;position:relative;
+}
+.vc-img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,0.15));
+}
+.vc-overall{
+  position:absolute;top:10px;right:10px;z-index:1;
+  width:36px;height:36px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:800;color:white;
+}
+.overall-a{background:#16a34a;}
+.overall-b{background:#d97706;}
+.overall-c{background:#dc2626;}
+
+.vc-body{padding:16px;}
+.vc-cat{
+  font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--grape);margin-bottom:4px;
+}
+.vc-name{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);margin-bottom:2px;}
+.vc-location{font-size:13px;color:var(--ink-dim);margin-bottom:12px;}
+
+.access-pills{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px;}
+.ap{
+  font-size:12px;font-weight:700;padding:3px 9px;border-radius:10px;
+  display:flex;align-items:center;gap:3px;
+}
+.ap-green{background:#dcfce7;color:#15803d;}
+.ap-amber{background:#fef3c7;color:#b45309;}
+.ap-red{background:#ffe4e6;color:#be123c;}
+.ap-purple{background:#ede9fe;color:#6d28d9;}
+
+.vc-sizes{
+  background:var(--blush);border-radius:var(--r-sm);
+  padding:8px 10px;
+  font-size:12px;color:var(--rose-dark);font-weight:500;
+  display:flex;align-items:center;gap:6px;
+}
+
+/* === SPARSE RESULTS CTA === */
+.sparse-cta{
+  grid-column:1/-1;
+  background:white;border:2px dashed var(--border);border-radius:var(--r);
+  padding:32px;text-align:center;
+  display:flex;flex-direction:column;align-items:center;gap:12px;
+}
+.sparse-cta p{font-size:14px;color:var(--ink-mid);}
+.sparse-cta button{
+  background:var(--grape);color:white;border:none;border-radius:var(--r-sm);
+  padding:10px 20px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;
+  cursor:pointer;transition:all 0.15s;
+}
+.sparse-cta button:hover{background:#6d28d9;}
+
+/* === MODAL === */
+.modal-bg{
+  position:fixed;inset:0;background:rgba(28,25,23,0.7);backdrop-filter:blur(8px);
+  z-index:200;display:none;align-items:flex-start;justify-content:center;
+  padding:40px 20px;overflow-y:auto;
+}
+.modal-bg.open{display:flex;}
+.modal{
+  background:var(--sand);border-radius:var(--r);
+  max-width:620px;width:100%;
+  box-shadow:0 24px 80px rgba(28,25,23,0.25);
+  animation:riseUp 0.28s cubic-bezier(0.34,1.56,0.64,1);
+  margin:auto;
+}
+@keyframes riseUp{from{opacity:0;transform:scale(0.92) translateY(20px);}to{opacity:1;transform:none;}}
+.modal-banner{
+  height:160px;display:flex;align-items:center;justify-content:center;
+  font-size:80px;border-radius:var(--r) var(--r) 0 0;position:relative;
+}
+.modal-close{
+  position:absolute;top:14px;right:14px;
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(255,255,255,0.9);border:none;
+  font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:all 0.15s;
+}
+.modal-close:hover{background:white;transform:scale(1.1);}
+.modal-content{padding:28px;}
+.mc-meta{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:20px;}
+.mc-title{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.mc-addr{font-size:13px;color:var(--ink-dim);}
+.mc-badge{
+  background:var(--fig);color:white;
+  border-radius:var(--r-sm);padding:8px 14px;text-align:center;flex-shrink:0;
+}
+.mc-grade{font-family:'Fraunces',serif;font-size:2rem;font-weight:700;line-height:1;}
+.mc-grade-label{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-top:2px;}
+
+.scores-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:20px;
+}
+.score-item{
+  background:white;border-radius:var(--r-sm);padding:12px 14px;
+  border:1px solid var(--border);
+}
+.si-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-dim);margin-bottom:6px;}
+.si-bar-wrap{height:6px;background:#f3f4f6;border-radius:3px;overflow:hidden;margin-bottom:4px;}
+.si-bar{height:100%;border-radius:3px;transition:width 0.5s ease;}
+.bar-green{background:#16a34a;}
+.bar-amber{background:#d97706;}
+.bar-red{background:#dc2626;}
+.si-score-text{font-size:13px;font-weight:700;color:var(--ink);}
+
+.modal-section{margin-bottom:18px;}
+.ms-head{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-dim);margin-bottom:8px;}
+.ms-body{font-size:14px;color:var(--ink-mid);line-height:1.7;}
+.ms-list{list-style:none;display:flex;flex-direction:column;gap:5px;}
+.ms-list li{font-size:14px;color:var(--ink-mid);display:flex;gap:8px;align-items:flex-start;}
+
+.size-range-box{
+  background:var(--blush);border-radius:var(--r-sm);
+  padding:12px 14px;display:flex;gap:10px;align-items:center;
+  font-size:14px;color:var(--rose-dark);font-weight:500;
+}
+
+/* === SUBMIT FORM === */
+.submit-banner{
+  background:linear-gradient(135deg,var(--fig) 0%,var(--fig-mid) 100%);
+  border-radius:var(--r);padding:32px;
+  margin-top:40px;
+}
+.sb-top{
+  display:flex;align-items:center;gap:28px;flex-wrap:wrap;
+  margin-bottom:0;
+  transition:margin 0.2s;
+}
+.sb-top.has-form{margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,0.1);}
+.sb-emoji{font-size:48px;flex-shrink:0;}
+.sb-text{flex:1;}
+.sb-text h3{
+  font-family:'Fraunces',serif;font-size:1.4rem;color:white;
+  margin-bottom:6px;
+}
+.sb-text p{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.65;}
+.sb-btn{
+  background:var(--rose);color:var(--fig);border:none;
+  border-radius:var(--r-sm);padding:12px 24px;
+  font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;
+  cursor:pointer;white-space:nowrap;transition:all 0.15s;flex-shrink:0;
+}
+.sb-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(249,168,212,0.35);}
+
+/* Submit form */
+.submit-form{
+  display:none;
+}
+.submit-form.open{display:block;}
+.sf-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;
+}
+.sf-field{display:flex;flex-direction:column;gap:4px;}
+.sf-field.full{grid-column:1/-1;}
+.sf-label{font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:0.05em;}
+.sf-input,.sf-textarea,.sf-sel{
+  background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);
+  border-radius:var(--r-sm);padding:10px 14px;
+  font-family:'DM Sans',sans-serif;font-size:14px;color:white;
+  outline:none;transition:border 0.15s;
+}
+.sf-input::placeholder,.sf-textarea::placeholder{color:rgba(255,255,255,0.35);}
+.sf-input:focus,.sf-textarea:focus,.sf-sel:focus{border-color:var(--grape-lt);}
+.sf-textarea{resize:vertical;min-height:80px;}
+.sf-sel{cursor:pointer;}
+.sf-sel option{color:var(--ink);background:white;}
+.sf-actions{
+  grid-column:1/-1;display:flex;gap:12px;justify-content:flex-end;margin-top:8px;
+}
+.sf-cancel{
+  background:none;border:1px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.7);
+  border-radius:var(--r-sm);padding:10px 20px;font-family:'DM Sans',sans-serif;
+  font-size:14px;font-weight:600;cursor:pointer;transition:all 0.15s;
+}
+.sf-cancel:hover{border-color:white;color:white;}
+.sf-submit{
+  background:var(--rose);color:var(--fig);border:none;
+  border-radius:var(--r-sm);padding:10px 24px;font-family:'DM Sans',sans-serif;
+  font-size:14px;font-weight:700;cursor:pointer;transition:all 0.15s;
+}
+.sf-submit:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(249,168,212,0.3);}
+
+/* === ABOUT SECTION === */
+.about-section{
+  background:white;border-radius:var(--r);border:1px solid var(--border);
+  padding:28px;margin-top:28px;display:none;
+}
+.about-section.open{display:block;}
+.about-section h2{
+  font-family:'Fraunces',serif;font-size:1.3rem;color:var(--ink);margin-bottom:12px;
+}
+.about-section p{font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:12px;}
+.about-section ul{margin:0 0 12px 20px;}
+.about-section li{font-size:14px;color:var(--ink-mid);line-height:1.7;}
+
+/* === FOOTER === */
+footer{
+  background:var(--fig);color:rgba(255,255,255,0.45);
+  padding:40px 32px 32px;font-size:13px;line-height:1.8;
+}
+.footer-inner{
+  max-width:960px;margin:0 auto;
+}
+.footer-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;
+  margin-bottom:28px;padding-bottom:28px;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+.footer-brand{
+  font-family:'Fraunces',serif;font-size:18px;color:white;font-weight:700;
+  margin-bottom:8px;
+}
+.footer-brand i{color:var(--grape-lt);font-weight:400;}
+.footer-desc{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.7;margin-bottom:12px;}
+.footer-tagline{
+  font-family:'Fraunces',serif;font-style:italic;
+  font-size:14px;color:var(--grape-lt);
+}
+.footer-col h4{
+  font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;
+  color:rgba(255,255,255,0.6);margin-bottom:12px;
+}
+.footer-col a{
+  display:block;font-size:13px;color:rgba(255,255,255,0.45);
+  text-decoration:none;padding:3px 0;transition:color 0.15s;cursor:pointer;
+}
+.footer-col a:hover{color:white;}
+.footer-bottom{
+  text-align:center;font-size:12px;color:rgba(255,255,255,0.35);
+}
+.footer-bottom a{color:var(--grape-lt);text-decoration:none;}
+.footer-bottom a:hover{color:white;}
+
+/* === BACK TO TOP === */
+.back-to-top{
+  position:fixed;bottom:24px;right:24px;
+  width:44px;height:44px;border-radius:50%;
+  background:var(--fig);color:white;border:none;
+  font-size:18px;cursor:pointer;
+  display:none;align-items:center;justify-content:center;
+  box-shadow:0 4px 16px rgba(45,27,78,0.3);
+  transition:all 0.2s;z-index:50;
+}
+.back-to-top.visible{display:flex;}
+.back-to-top:hover{background:var(--grape);transform:translateY(-2px);}
+
+@media(max-width:640px){
+  nav{padding:0 16px;}
+  .nav-right .nav-link,.nav-right .nav-add-btn{display:none;}
+  .hamburger{display:flex;}
+  .hero{padding:40px 16px 100px;}
+  .search-zone,.main{padding-left:16px;padding-right:16px;}
+  .sc-divider,.sc-select{display:none;}
+  .venue-grid{grid-template-columns:1fr;}
+  .scores-grid{grid-template-columns:1fr 1fr;}
+  .how-grid{grid-template-columns:1fr;gap:12px;}
+  .footer-grid{grid-template-columns:1fr;gap:20px;}
+  .sf-grid{grid-template-columns:1fr;}
+  .sf-field.full{grid-column:1;}
+}
+</style>
+</head>
+<body>
+
+<a href="#mainContent" class="skip-link">Skip to main content</a>
+
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-wordmark">
+    <span class="nw-access">Access</span>
+    <span class="nw-for">for</span>
+    <span class="nw-body">Every Body</span>
+  </div>
+  <div class="nav-right">
+    <button class="nav-link" onclick="toggleAbout()">About</button>
+    <button class="nav-link" onclick="toggleHow()">How it works</button>
+    <button class="nav-link" onclick="scrollToSubmit()">Submit venue</button>
+    <button class="nav-add-btn" onclick="toggleSubmitForm()">+ Add venue</button>
+  </div>
+  <button class="hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" role="menu">
+  <button class="nav-link" role="menuitem" onclick="toggleAbout();closeMobileMenu()">About</button>
+  <button class="nav-link" role="menuitem" onclick="toggleHow();closeMobileMenu()">How it works</button>
+  <button class="nav-link" role="menuitem" onclick="scrollToSubmit();closeMobileMenu()">Submit venue</button>
+  <button class="nav-add-btn" role="menuitem" onclick="toggleSubmitForm();closeMobileMenu()">+ Add venue</button>
+</div>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-wave"></div>
+  <div class="hero-inner">
+    <div class="hero-label">UK venue access guide</div>
+    <h1>Every space should welcome<br><span class="italic">every body.</span></h1>
+    <p class="hero-sub">Honest access ratings for plus-size people, wheelchair users, and anyone who needs to know before they go. Theatres, cinemas, restaurants, transport — rated by real people.</p>
+    <p class="hero-tagline">Know before you go.</p>
+    <div class="hero-trust"><span>&#9733;</span> Community-rated by real visitors across the UK</div>
+  </div>
+</section>
+
+<div class="search-zone">
+  <form class="search-card" role="search" aria-label="Search venues" onsubmit="executeSearch(event)">
+    <div class="sc-input-wrap">
+      <span style="font-size:18px;color:#a8a29e;" aria-hidden="true">&#128269;</span>
+      <input type="text" class="sc-input" id="searchInput" placeholder="Search venues, cities, or features..." aria-label="Search venues, cities, or features" oninput="search(this.value)">
+    </div>
+    <div class="sc-divider"></div>
+    <select class="sc-select" id="regionSelect" aria-label="Filter by UK region" onchange="applyFilters()">
+      <option value="">All UK regions</option>
+      <option value="london">London</option>
+      <option value="wales">Wales</option>
+      <option value="midlands">Midlands</option>
+      <option value="north">North of England</option>
+      <option value="scotland">Scotland</option>
+    </select>
+    <button type="submit" class="sc-btn">Search</button>
+  </form>
+</div>
+
+<main class="main" id="mainContent">
+  <div style="height:36px;"></div>
+
+  <!-- About Section (hidden by default) -->
+  <div class="about-section" id="aboutSection" role="region" aria-label="About Access for Every Body">
+    <h2>About Access for Every Body</h2>
+    <p>Access for Every Body is a community-driven venue guide helping plus-size people, wheelchair users, and anyone with access needs discover which UK venues truly welcome them.</p>
+    <p>We believe nobody should have to arrive at a venue only to discover it doesn't accommodate their body. Our ratings cover:</p>
+    <ul>
+      <li><strong>Seating comfort</strong> — seat widths, armrest types, alternative seating</li>
+      <li><strong>Physical access</strong> — step-free entry, aisle widths, lift availability</li>
+      <li><strong>Accessible toilets</strong> — Changing Places, space, grab rails</li>
+      <li><strong>Staff helpfulness</strong> — attitude, training, willingness to assist</li>
+    </ul>
+    <p>Every rating comes from real community members who have visited the venue. We are not affiliated with any venue listed. Always confirm your specific needs directly with the venue before visiting.</p>
+    <p style="font-size:13px;color:var(--ink-dim);margin-bottom:0;"><strong>Accessibility statement:</strong> We are committed to making this website itself accessible. If you encounter any barriers using this site, please contact us so we can improve.</p>
+  </div>
+
+  <!-- How it Works Section (hidden by default) -->
+  <div class="how-section" id="howSection" role="region" aria-label="How it works">
+    <h2>How It Works</h2>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-step-num">1</div>
+        <h3>Visit a venue</h3>
+        <p>Go somewhere — a theatre, cinema, restaurant, or anywhere with seating and access needs.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">2</div>
+        <h3>Submit your review</h3>
+        <p>Rate the venue across four categories: seating, access, toilets, and staff. Add your notes and tips.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">3</div>
+        <h3>Help others decide</h3>
+        <p>Your review helps someone else know before they go. Every honest review makes public spaces more navigable.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="key-bar" role="region" aria-label="Access rating key">
+    <span class="key-label">Access rating:</span>
+    <div class="key-items">
+      <div class="ki"><div class="ki-dot dot-green" aria-hidden="true"></div>Excellent — all bodies welcome</div>
+      <div class="ki"><div class="ki-dot dot-amber" aria-hidden="true"></div>Partial — some limitations</div>
+      <div class="ki"><div class="ki-dot dot-red" aria-hidden="true"></div>Poor — significant barriers</div>
+      <div class="ki"><div class="ki-dot dot-purple" aria-hidden="true"></div>Extended sizing available</div>
+    </div>
+  </div>
+
+  <div class="filters-row" role="toolbar" aria-label="Filter venues by category">
+    <button class="filter-chip active" onclick="filterVenues('all',this)">All</button>
+    <button class="filter-chip" onclick="filterVenues('theatre',this)">&#127917; Theatres</button>
+    <button class="filter-chip" onclick="filterVenues('cinema',this)">&#127916; Cinemas</button>
+    <button class="filter-chip" onclick="filterVenues('restaurant',this)">&#127869; Restaurants</button>
+    <button class="filter-chip" onclick="filterVenues('transport',this)">&#128652; Transport</button>
+    <button class="filter-chip" onclick="filterVenues('attraction',this)">&#127963; Attractions</button>
+    <button class="filter-chip" onclick="filterVenues('sport',this)">&#9917; Sport</button>
+    <div class="sort-wrap">
+      <select class="sort-select" aria-label="Sort venues" onchange="sortVenues(this.value)">
+        <option value="best">Sort: Best rated</option>
+        <option value="reviews">Sort: Most reviewed</option>
+        <option value="recent">Sort: Recently added</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="venue-grid" id="venueGrid" role="list" aria-label="Venue listings"></div>
+
+  <!-- Submit Banner & Form -->
+  <div class="submit-banner" id="submitBanner">
+    <div class="sb-top" id="sbTop">
+      <div class="sb-emoji" aria-hidden="true">&#128221;</div>
+      <div class="sb-text">
+        <h3>Know a venue that belongs here?</h3>
+        <p>Whether it's brilliantly inclusive or shockingly not — your review helps plus-size people, wheelchair users, and anyone who needs to know decide whether a space is right for them. Takes 3 minutes.</p>
+      </div>
+      <button class="sb-btn" onclick="toggleSubmitForm()" aria-expanded="false" id="sbToggle">Add your review &#8594;</button>
+    </div>
+    <form class="submit-form" id="submitForm" onsubmit="handleSubmit(event)">
+      <div class="sf-grid">
+        <div class="sf-field">
+          <label class="sf-label" for="sfName">Venue name *</label>
+          <input class="sf-input" type="text" id="sfName" placeholder="e.g. Odeon Luxe Leicester Sq" required>
+        </div>
+        <div class="sf-field">
+          <label class="sf-label" for="sfLocation">Location *</label>
+          <input class="sf-input" type="text" id="sfLocation" placeholder="e.g. London, Cardiff" required>
+        </div>
+        <div class="sf-field">
+          <label class="sf-label" for="sfCategory">Category *</label>
+          <select class="sf-sel" id="sfCategory" required>
+            <option value="">Choose...</option>
+            <option value="theatre">Theatre</option>
+            <option value="cinema">Cinema</option>
+            <option value="restaurant">Restaurant</option>
+            <option value="transport">Transport</option>
+            <option value="attraction">Attraction</option>
+            <option value="sport">Sport venue</option>
+          </select>
+        </div>
+        <div class="sf-field">
+          <label class="sf-label" for="sfEmail">Your email (optional)</label>
+          <input class="sf-input" type="email" id="sfEmail" placeholder="In case we need to follow up">
+        </div>
+        <div class="sf-field full">
+          <label class="sf-label" for="sfNotes">Your access review *</label>
+          <textarea class="sf-textarea" id="sfNotes" placeholder="What was your experience? Seat widths, access, staff attitude, anything that helped or hindered..." required></textarea>
+        </div>
+        <div class="sf-field full">
+          <label class="sf-label">Quick ratings</label>
+          <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:4px;">
+            <label style="font-size:13px;color:rgba(255,255,255,0.6);display:flex;align-items:center;gap:6px;">
+              Seating <select class="sf-sel" style="padding:6px 10px;font-size:13px;" aria-label="Seating rating">
+                <option>—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+              </select>
+            </label>
+            <label style="font-size:13px;color:rgba(255,255,255,0.6);display:flex;align-items:center;gap:6px;">
+              Access <select class="sf-sel" style="padding:6px 10px;font-size:13px;" aria-label="Access rating">
+                <option>—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+              </select>
+            </label>
+            <label style="font-size:13px;color:rgba(255,255,255,0.6);display:flex;align-items:center;gap:6px;">
+              Toilets <select class="sf-sel" style="padding:6px 10px;font-size:13px;" aria-label="Toilet rating">
+                <option>—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+              </select>
+            </label>
+            <label style="font-size:13px;color:rgba(255,255,255,0.6);display:flex;align-items:center;gap:6px;">
+              Staff <select class="sf-sel" style="padding:6px 10px;font-size:13px;" aria-label="Staff rating">
+                <option>—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div class="sf-actions">
+          <button type="button" class="sf-cancel" onclick="toggleSubmitForm()">Cancel</button>
+          <button type="submit" class="sf-submit">Submit review &#8594;</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+
+<!-- MODAL -->
+<div class="modal-bg" id="modalBg" onclick="closeModal(event)" role="dialog" aria-modal="true" aria-label="Venue details">
+  <div class="modal" id="modal">
+    <div class="modal-banner" id="modalBanner">
+      <button class="modal-close" onclick="closeModalDirect()" aria-label="Close venue details">&#10005;</button>
+    </div>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+</div>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&#8593;</button>
+
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Access for <i>Every Body</i></div>
+        <p class="footer-desc">Community venue access guide for the UK. Helping plus-size people, wheelchair users, and anyone with access needs know before they go.</p>
+        <p class="footer-tagline">Know before you go.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Guide</h4>
+        <a onclick="toggleAbout()">About us</a>
+        <a onclick="toggleHow()">How it works</a>
+        <a onclick="scrollToSubmit()">Submit a venue</a>
+        <a href="#mainContent">Browse venues</a>
+      </div>
+      <div class="footer-col">
+        <h4>Info</h4>
+        <a onclick="toggleAbout()">Accessibility statement</a>
+        <a href="#">Community guidelines</a>
+        <a href="#">Contact us</a>
+        <a href="#">Privacy policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      Ratings reflect community submissions and may change. Always confirm your specific needs with the venue directly.<br>
+      &copy; 2025 Access for Every Body &middot; <strong>Not affiliated with any venue listed</strong>
+    </div>
+  </div>
+</footer>
+
+<script>
+const VENUES = [
+  {
+    name: 'Odeon Luxe Leicester Square',
+    location: 'London',
+    region: 'london',
+    category: 'cinema',
+    cat: '\ud83c\udfac Cinema',
+    emoji: '\ud83c\udfac',
+    bg: '#1e1b4b',
+    grade: 'A',
+    gradeClass: 'overall-a',
+    scores: { seating: 5, access: 5, toilet: 4, staff: 5 },
+    seatInfo: 'Companion seats available free. Armless seats in every row. Sofa-style double seats. Seat width from 52cm+.',
+    wheelchairAccess: true,
+    sizeRange: 'Seats from 50cm wide \u00b7 Armless seating available \u00b7 Reclining sofas',
+    pills: [
+      {label:'Armless seating',type:'green'},
+      {label:'Wide aisles',type:'green'},
+      {label:'Companion seats free',type:'green'},
+      {label:'Step-free',type:'purple'},
+    ],
+    notes: 'One of the best cinema experiences for plus-size and mobility-restricted visitors. The Luxe recliners have no fixed armrests \u2014 you control armrest position. Companion tickets are free with Odeon Access Card. Staff are trained in inclusive service.',
+    transport: ['Leicester Square tube (step-free exit 1)','Piccadilly Circus 5 min walk'],
+    lastUpdated: 'Feb 2025',
+    reviews: 47,
+    added: '2025-02-01'
+  },
+  {
+    name: 'Royal Shakespeare Theatre',
+    location: 'Stratford-upon-Avon',
+    region: 'midlands',
+    category: 'theatre',
+    cat: '\ud83c\udfad Theatre',
+    emoji: '\ud83c\udfad',
+    bg: '#1c1917',
+    grade: 'B',
+    gradeClass: 'overall-b',
+    scores: { seating: 3, access: 4, toilet: 4, staff: 4 },
+    seatInfo: 'Seat widths vary significantly \u2014 stalls 45\u201352cm, some rows wider. Removable aisle seats available on request. Advance notice recommended.',
+    wheelchairAccess: true,
+    sizeRange: 'Wider stall seats available \u00b7 Call ahead to reserve \u00b7 Companion seats in designated areas',
+    pills: [
+      {label:'Step-free access',type:'green'},
+      {label:'Varying seat widths',type:'amber'},
+      {label:'Advance notice needed',type:'amber'},
+      {label:'Helpful staff',type:'purple'},
+    ],
+    notes: 'The RST is committed to access but like many older theatres, seat widths vary considerably. The front stalls tend to be wider. Call the access line before booking \u2014 staff can identify the widest seats for your needs. The accessible toilet is excellent. Induction loop throughout.',
+    transport: ['Stratford-upon-Avon station 15 min walk','Blue Badge parking nearby'],
+    lastUpdated: 'Jan 2025',
+    reviews: 23,
+    added: '2025-01-15'
+  },
+  {
+    name: 'Honest Burgers (multiple UK locations)',
+    location: 'Multiple UK',
+    region: '',
+    category: 'restaurant',
+    cat: '\ud83c\udf7d Restaurant',
+    emoji: '\ud83c\udf54',
+    bg: '#431407',
+    grade: 'A',
+    gradeClass: 'overall-a',
+    scores: { seating: 4, access: 5, toilet: 4, staff: 5 },
+    seatInfo: 'Mix of booth, table and bar seating. Booths available but tables with chairs recommended for plus-size. No fixed armrests on main dining chairs.',
+    wheelchairAccess: true,
+    sizeRange: 'Standard chairs without armrests \u00b7 Booth option available \u00b7 Counter seating',
+    pills: [
+      {label:'Armless dining chairs',type:'green'},
+      {label:'Level entrance',type:'green'},
+      {label:'Welcoming staff',type:'green'},
+      {label:'Accessible toilet',type:'purple'},
+    ],
+    notes: 'Consistently rated as one of the most body-neutral restaurant chains in the UK. Main dining area chairs have no armrests. Staff are welcoming without comment. Booths are available but the opening width varies by location \u2014 the main tables are the safest bet. Multiple accessible locations across UK.',
+    transport: ['Varies by location','Most are city-centre, easily accessible'],
+    lastUpdated: 'Mar 2025',
+    reviews: 89,
+    added: '2025-03-01'
+  },
+  {
+    name: 'National Railway Museum York',
+    location: 'York',
+    region: 'north',
+    category: 'attraction',
+    cat: '\ud83c\udfdb Attraction',
+    emoji: '\ud83d\ude82',
+    bg: '#1e3a5f',
+    grade: 'A',
+    gradeClass: 'overall-a',
+    scores: { seating: 5, access: 5, toilet: 5, staff: 5 },
+    seatInfo: 'Large open floor spaces throughout. Caf\u00e9 seating without armrests. Wider seating options throughout museum. No narrow turnstiles.',
+    wheelchairAccess: true,
+    sizeRange: 'All seating armless \u00b7 Wide caf\u00e9 chairs \u00b7 Spacious throughout',
+    pills: [
+      {label:'Spacious layout',type:'green'},
+      {label:'Free entry',type:'green'},
+      {label:'Armless seating',type:'green'},
+      {label:'Changing Places',type:'purple'},
+    ],
+    notes: 'Outstanding accessibility across all dimensions. The large open halls are perfect for mobility aids and larger bodies. Free entry removes the anxiety of "what if it\'s not right." Changing Places facility available. The caf\u00e9 has excellent wide seating. Staff have completed inclusive visitor training.',
+    transport: ['York station 2 min walk \u2014 step-free route','Blue Badge parking available'],
+    lastUpdated: 'Feb 2025',
+    reviews: 61,
+    added: '2025-02-10'
+  },
+  {
+    name: 'Cardiff Bus (Transport for Wales)',
+    location: 'Cardiff, Wales',
+    region: 'wales',
+    category: 'transport',
+    cat: '\ud83d\ude8c Transport',
+    emoji: '\ud83d\ude8c',
+    bg: '#14532d',
+    grade: 'B',
+    gradeClass: 'overall-b',
+    scores: { seating: 3, access: 4, toilet: 1, staff: 3 },
+    seatInfo: 'Modern low-floor buses \u2014 priority seats with space. Older fleet vehicles have narrower seats. The articulated routes (36/36B) have wider seating throughout.',
+    wheelchairAccess: true,
+    sizeRange: 'Priority seats widest \u00b7 Articulated buses best \u00b7 Standard seats can be narrow',
+    pills: [
+      {label:'Low-floor access',type:'green'},
+      {label:'Seat width varies',type:'amber'},
+      {label:'No onboard toilets',type:'red'},
+      {label:'Driver training patchy',type:'amber'},
+    ],
+    notes: 'The newer TfW fleet has significantly improved accessibility. Priority seating areas are the widest. The articulated bendy buses running central Cardiff routes have the best seating width. No onboard toilets on any route \u2014 plan stops accordingly. Driver treatment of larger passengers is inconsistent \u2014 complaints can be made via the TfW website.',
+    transport: ['N/A \u2014 this is transport itself'],
+    lastUpdated: 'Jan 2025',
+    reviews: 34,
+    added: '2025-01-20'
+  },
+  {
+    name: 'Vue Cinema (Nationwide)',
+    location: 'Multiple UK',
+    region: '',
+    category: 'cinema',
+    cat: '\ud83c\udfac Cinema',
+    emoji: '\ud83c\udfac',
+    bg: '#0c4a6e',
+    grade: 'B',
+    gradeClass: 'overall-b',
+    scores: { seating: 3, access: 4, toilet: 4, staff: 3 },
+    seatInfo: 'Seat widths vary by location and screen. Newer Vue sites have wider seats. Always check specific venue \u2014 call ahead for larger screens with better seating.',
+    wheelchairAccess: true,
+    sizeRange: 'Varies by site \u00b7 Call ahead \u00b7 Vue Access Card gives companion free',
+    pills: [
+      {label:'Access Card available',type:'green'},
+      {label:'Step-free most sites',type:'green'},
+      {label:'Seat width varies',type:'amber'},
+      {label:'Some narrow aisles',type:'amber'},
+    ],
+    notes: 'Vue is improving but inconsistent. The newer large-format screens (IMAX, VUE Xtreme) tend to have wider, more comfortable seating. Smaller screens in older buildings can be challenging. The Vue Access Card provides free companion tickets \u2014 apply online. Staff helpfulness varies by location.',
+    transport: ['Most locations city-centre or retail park','Varies by site'],
+    lastUpdated: 'Mar 2025',
+    reviews: 112,
+    added: '2025-03-05'
+  },
+  {
+    name: 'Swansea\'s Grand Theatre',
+    location: 'Swansea, Wales',
+    region: 'wales',
+    category: 'theatre',
+    cat: '\ud83c\udfad Theatre',
+    emoji: '\ud83c\udfad',
+    bg: '#3b0764',
+    grade: 'B',
+    gradeClass: 'overall-b',
+    scores: { seating: 3, access: 3, toilet: 3, staff: 5 },
+    seatInfo: 'Victorian theatre \u2014 seating is narrow by modern standards. Wider seats in boxes and some rear stalls positions. Call box office in advance \u2014 they are extremely helpful.',
+    wheelchairAccess: true,
+    sizeRange: 'Victorian seating \u2014 narrow \u00b7 Box seats wider \u00b7 Call ahead essential',
+    pills: [
+      {label:'Exceptional staff',type:'green'},
+      {label:'Victorian narrow seating',type:'red'},
+      {label:'Box seats wider',type:'amber'},
+      {label:'Call ahead',type:'amber'},
+    ],
+    notes: 'The Grand is a beloved historic venue with staff who genuinely try. The building\'s Victorian heritage means standard seating is narrow \u2014 typically 43\u201346cm. However, the box seats are significantly wider and more comfortable. The box office team are outstanding and will go out of their way to find the right position for you. Always call ahead on 01792 475715.',
+    transport: ['City centre \u2014 most buses','Pay & Display on Singleton Street'],
+    lastUpdated: 'Feb 2025',
+    reviews: 19,
+    added: '2025-02-18'
+  },
+  {
+    name: 'Emirates Stadium (Arsenal)',
+    location: 'London, N7',
+    region: 'london',
+    category: 'sport',
+    cat: '\u26bd Sport',
+    emoji: '\u26bd',
+    bg: '#7f1d1d',
+    grade: 'A',
+    gradeClass: 'overall-a',
+    scores: { seating: 4, access: 5, toilet: 5, staff: 4 },
+    seatInfo: 'Standard seats 50cm wide \u2014 above UK Premier League average. Wheelchair positions with wide companion seats. Amenity seats available for fans who need more space.',
+    wheelchairAccess: true,
+    sizeRange: 'Standard seats 50cm \u00b7 Amenity seating programme \u00b7 Companion seats',
+    pills: [
+      {label:'Above-average seat width',type:'green'},
+      {label:'Amenity seating',type:'green'},
+      {label:'Step-free throughout',type:'green'},
+      {label:'Accessible concessions',type:'purple'},
+    ],
+    notes: 'Arsenal has one of the better accessibility programmes in the Premier League. Amenity seating (larger, end-of-row seats with extra space) is available on application \u2014 contact the disability access team in advance of booking. Standard seats at 50cm width are above the PL average. Accessible toilets on every level.',
+    transport: ['Arsenal tube (Piccadilly line) 5 min walk','Holloway Road 10 min'],
+    lastUpdated: 'Jan 2025',
+    reviews: 38,
+    added: '2025-01-28'
+  },
+];
+
+let activeCategory = 'all';
+let activeSort = 'best';
+let activeRegion = '';
+
+function getAvgScore(v) {
+  const s = v.scores;
+  return (s.seating + s.access + s.toilet + s.staff) / 4;
+}
+
+function getFilteredVenues() {
+  let list = [...VENUES];
+  // Category filter
+  if (activeCategory !== 'all') {
+    list = list.filter(v => v.category === activeCategory);
+  }
+  // Region filter
+  if (activeRegion) {
+    list = list.filter(v => v.region === activeRegion || v.location.toLowerCase().includes(activeRegion));
+  }
+  // Text search
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  if (q) {
+    list = list.filter(v =>
+      [v.name, v.location, v.notes, v.sizeRange, ...v.pills.map(p=>p.label)].join(' ').toLowerCase().includes(q)
+    );
+  }
+  // Sort
+  if (activeSort === 'best') {
+    list.sort((a, b) => getAvgScore(b) - getAvgScore(a));
+  } else if (activeSort === 'reviews') {
+    list.sort((a, b) => b.reviews - a.reviews);
+  } else if (activeSort === 'recent') {
+    list.sort((a, b) => (b.added || '').localeCompare(a.added || ''));
+  }
+  return list;
+}
+
+function renderVenues(list) {
+  const grid = document.getElementById('venueGrid');
+  if (list.length === 0) {
+    grid.innerHTML = '<p style="color:var(--ink-dim);grid-column:1/-1;padding:32px 0;">No venues match your search. Try different terms or categories.</p>';
+    return;
+  }
+
+  let html = list.map((v, i) => `
+    <div class="venue-card" role="listitem" tabindex="0" onclick="openModal(${VENUES.indexOf(v)})" onkeydown="if(event.key==='Enter')openModal(${VENUES.indexOf(v)})" style="animation:fadeUp 0.3s ease ${i*0.05}s both" aria-label="${v.name}, rated ${v.grade}">
+      <div class="vc-img" style="background:${v.bg}">
+        <span style="position:relative;z-index:1" aria-hidden="true">${v.emoji}</span>
+        <div class="vc-overall ${v.gradeClass}" aria-label="Overall grade: ${v.grade}">${v.grade}</div>
+      </div>
+      <div class="vc-body">
+        <div class="vc-cat">${v.cat}</div>
+        <div class="vc-name">${v.name}</div>
+        <div class="vc-location">\ud83d\udccd ${v.location} \u00b7 ${v.reviews} reviews</div>
+        <div class="access-pills" aria-label="Access features">
+          ${v.pills.map(p=>`<span class="ap ap-${p.type}">${p.label}</span>`).join('')}
+        </div>
+        <div class="vc-sizes">\ud83d\udc9c ${v.sizeRange}</div>
+      </div>
+    </div>
+  `).join('');
+
+  // Sparse results CTA
+  if (list.length < 3 && activeCategory !== 'all') {
+    const catName = activeCategory.charAt(0).toUpperCase() + activeCategory.slice(1);
+    html += `
+      <div class="sparse-cta" role="listitem">
+        <p>Know a <strong>${catName}</strong> venue that should be listed?<br>Your review helps others know before they go.</p>
+        <button onclick="toggleSubmitForm()">Submit a ${catName.toLowerCase()} venue \u2192</button>
+      </div>
+    `;
+  }
+
+  grid.innerHTML = html;
+}
+
+function applyFilters() {
+  activeRegion = document.getElementById('regionSelect').value;
+  renderVenues(getFilteredVenues());
+}
+
+function filterVenues(cat, btn) {
+  activeCategory = cat;
+  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  renderVenues(getFilteredVenues());
+}
+
+function search(q) {
+  renderVenues(getFilteredVenues());
+}
+
+function executeSearch(e) {
+  e.preventDefault();
+  applyFilters();
+}
+
+function sortVenues(val) {
+  activeSort = val;
+  renderVenues(getFilteredVenues());
+}
+
+const scoreLabel = n => n>=4?'Excellent':n>=3?'Good':n>=2?'Fair':'Poor';
+const barColor = n => n>=4?'bar-green':n>=3?'bar-amber':'bar-red';
+
+// Focus trap for modal
+let focusTrapElements = [];
+let firstFocusable, lastFocusable;
+
+function trapFocus(e) {
+  if (e.key === 'Tab') {
+    if (e.shiftKey) {
+      if (document.activeElement === firstFocusable) {
+        e.preventDefault();
+        lastFocusable.focus();
+      }
+    } else {
+      if (document.activeElement === lastFocusable) {
+        e.preventDefault();
+        firstFocusable.focus();
+      }
+    }
+  }
+}
+
+function openModal(idx) {
+  const v = VENUES[idx];
+  document.getElementById('modalBanner').style.background = v.bg;
+  document.getElementById('modalBanner').innerHTML = `
+    <span style="font-size:72px;position:relative;z-index:1" aria-hidden="true">${v.emoji}</span>
+    <button class="modal-close" onclick="closeModalDirect()" aria-label="Close venue details">&#10005;</button>
+  `;
+
+  const scoreKeys = ['seating','access','toilet','staff'];
+  const scoreNames = ['Seating comfort','Physical access','Accessible toilets','Staff helpfulness'];
+
+  document.getElementById('modalContent').innerHTML = `
+    <div class="mc-meta">
+      <div>
+        <div class="mc-title">${v.name}</div>
+        <div class="mc-addr">\ud83d\udccd ${v.location} \u00b7 ${v.cat}</div>
+      </div>
+      <div class="mc-badge">
+        <div class="mc-grade">${v.grade}</div>
+        <div class="mc-grade-label">Overall</div>
+      </div>
+    </div>
+
+    <div class="scores-grid" role="list" aria-label="Access scores">
+      ${scoreKeys.map((k,i)=>`
+        <div class="score-item" role="listitem">
+          <div class="si-label">${scoreNames[i]}</div>
+          <div class="si-bar-wrap" role="progressbar" aria-valuenow="${v.scores[k]}" aria-valuemin="0" aria-valuemax="5" aria-label="${scoreNames[i]}: ${v.scores[k]} out of 5">
+            <div class="si-bar ${barColor(v.scores[k])}" style="width:${v.scores[k]*20}%"></div>
+          </div>
+          <div class="si-score-text">${scoreLabel(v.scores[k])} (${v.scores[k]}/5)</div>
+        </div>
+      `).join('')}
+    </div>
+
+    <div class="modal-section">
+      <div class="ms-head">\ud83d\udc9c For plus-size visitors</div>
+      <div class="size-range-box">\ud83e\ude91 ${v.sizeRange}</div>
+    </div>
+
+    <div class="modal-section">
+      <div class="ms-head">\ud83d\udcdd Detailed access notes</div>
+      <div class="ms-body">${v.notes}</div>
+    </div>
+
+    <div class="modal-section">
+      <div class="ms-head">\ud83d\ude8c Getting here</div>
+      <ul class="ms-list">
+        ${v.transport.map(t=>`<li><span aria-hidden="true">\u2192</span><span>${t}</span></li>`).join('')}
+      </ul>
+    </div>
+
+    <p style="font-size:12px;color:var(--ink-dim);border-top:1px solid var(--border);padding-top:12px;margin-top:4px;">
+      Last updated: ${v.lastUpdated} \u00b7 ${v.reviews} community reviews \u00b7
+      <a href="#" style="color:var(--grape);font-weight:600;" onclick="event.preventDefault();closeModalDirect();toggleSubmitForm();">Write a review</a>
+    </p>
+  `;
+
+  const modalBg = document.getElementById('modalBg');
+  modalBg.classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  // Set up focus trap
+  const modal = document.getElementById('modal');
+  focusTrapElements = modal.querySelectorAll('button, a, [tabindex]:not([tabindex="-1"])');
+  if (focusTrapElements.length > 0) {
+    firstFocusable = focusTrapElements[0];
+    lastFocusable = focusTrapElements[focusTrapElements.length - 1];
+    firstFocusable.focus();
+  }
+  document.addEventListener('keydown', trapFocus);
+}
+
+function closeModal(e) { if(e.target === document.getElementById('modalBg')) closeModalDirect(); }
+function closeModalDirect() {
+  document.getElementById('modalBg').classList.remove('open');
+  document.body.style.overflow = '';
+  document.removeEventListener('keydown', trapFocus);
+}
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeModalDirect(); });
+
+// Mobile menu
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const btn = document.querySelector('.hamburger');
+  const isOpen = menu.classList.toggle('open');
+  btn.setAttribute('aria-expanded', isOpen);
+  btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+}
+function closeMobileMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  const btn = document.querySelector('.hamburger');
+  btn.setAttribute('aria-expanded', 'false');
+  btn.setAttribute('aria-label', 'Open menu');
+}
+
+// Toggle sections
+function toggleHow() {
+  const section = document.getElementById('howSection');
+  section.classList.toggle('open');
+  document.getElementById('aboutSection').classList.remove('open');
+  if (section.classList.contains('open')) {
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+function toggleAbout() {
+  const section = document.getElementById('aboutSection');
+  section.classList.toggle('open');
+  document.getElementById('howSection').classList.remove('open');
+  if (section.classList.contains('open')) {
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+// Submit form
+function toggleSubmitForm() {
+  const form = document.getElementById('submitForm');
+  const top = document.getElementById('sbTop');
+  const toggle = document.getElementById('sbToggle');
+  const isOpen = form.classList.toggle('open');
+  top.classList.toggle('has-form', isOpen);
+  toggle.setAttribute('aria-expanded', isOpen);
+  toggle.textContent = isOpen ? 'Close form' : 'Add your review \u2192';
+  if (isOpen) {
+    document.getElementById('submitBanner').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    document.getElementById('sfName').focus();
+  }
+}
+function scrollToSubmit() {
+  document.getElementById('submitBanner').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+function handleSubmit(e) {
+  e.preventDefault();
+  const name = document.getElementById('sfName').value;
+  document.getElementById('submitForm').innerHTML = `
+    <div style="text-align:center;padding:20px 0;">
+      <p style="font-size:28px;margin-bottom:8px;">&#10003;</p>
+      <p style="font-size:16px;font-weight:600;color:white;margin-bottom:4px;">Thank you for submitting ${name}!</p>
+      <p style="font-size:14px;color:rgba(255,255,255,0.6);">Your review will be checked and added to the guide shortly.</p>
+    </div>
+  `;
+}
+
+// Back to top
+window.addEventListener('scroll', () => {
+  document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
+});
+
+// Stagger animation
+const style = document.createElement('style');
+style.textContent = '@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}';
+document.head.appendChild(style);
+
+renderVenues(getFilteredVenues());
+</script>
+</body>
+</html>
